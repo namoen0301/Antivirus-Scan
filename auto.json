@@ -183,6 +183,17 @@
         ],
         "url": "https://www.eset.com/us/home/antivirus/"
     },
+    "Trend Micro（趋势科技）": {
+        "processes": [
+            "tmpfw.exe",
+            "tmlisten.exe",
+            "coreServiceShell.exe",
+            "coreFrameworkHost.exe",
+            "uiWatchDog.exe",
+            "TMLISTEN.exe"
+        ],
+        "url": "https://www.trendmicro.com"
+    },
     "Emsisoft": {
         "processes": [
             "a2guard.exe",
@@ -1703,7 +1714,6 @@
             "SYMWSC.exe",
             "SYNMGR.exe",
             "TAUMON.exe",
-            "TMLISTEN.exe",
             "TMNTSRV.exe",
             "TMPROXY.exe",
             "TNBUTIL.exe",
