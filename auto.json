@@ -1999,16 +1999,15 @@
         "processes": [
             "Deep Security Manager.exe"
         ],
-        "url": ""
+        "url": "https://www.asiainfo-sec.com/product/detail-148.html"
     },
     "亚信DS客户端": {
         "processes": [
             "dsa.exe",
-            "coreFrameworkHost.exe",
-            "coreServiceShell.exe",
+            "UniAccessAgent.exe",
             "dsvp.exe"
         ],
-        "url": ""
+        "url": "https://www.asiainfo-sec.com/product/detail-148.html"
     },
     "深信服EDR": {
         "processes": [
