@@ -1924,11 +1924,11 @@
         ],
         "url": ""
     },
-    "windows defender smartscreen": {
+    "Windows Defender SmartScreen": {
         "processes": [
             "smartscreen.exe"
         ],
-        "url": ""
+        "url": "https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/virus-and-threat-protection/microsoft-defender-smartscreen/"
     },
     "Sophos Clean Service": {
         "processes": [
