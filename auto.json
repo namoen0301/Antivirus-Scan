@@ -478,27 +478,6 @@
         ],
         "url": "https://www.sophos.com/"
     },
-    "Symantec": {
-        "processes": [
-            "ccSetMgr.exe",
-            "ccapp.exe",
-            "vptray.exe",
-            "ccpxysvc.exe",
-            "cfgwiz.exe",
-            "smc.exe",
-            "symproxysvc.exe",
-            "vpc32.exe",
-            "lsetup.exe",
-            "luall.exe",
-            "lucomserver.exe",
-            "sbserv.exe",
-            "ccEvtMgr.exe",
-            "smcGui.exe",
-            "snac.exe",
-            "SymCorpUI.exe"
-        ],
-        "url": "http://www.symantec.com/"
-    },
     "TACHYON": {
         "processes": [],
         "url": "https://www.tachyonlab.com/en/index.html"
@@ -697,7 +676,7 @@
         ],
         "url": "http://www.spywareterminator.com/Default.aspx"
     },
-    "Norton": {
+    "Norton（赛门铁克）": {
         "processes": [
             "ccSvcHst.exe",
             "rtvscan.exe",
@@ -717,6 +696,28 @@
             "nortonsecurity.exe"
         ],
         "url": "https://us.norton.com/"
+    },
+    "Symantec（赛门铁克）": {
+        "processes": [
+            "ccSetMgr.exe",
+            "ccapp.exe",
+            "vptray.exe",
+            "ccpxysvc.exe",
+            "cfgwiz.exe",
+            "smc.exe",
+            "symproxysvc.exe",
+            "vpc32.exe",
+            "lsetup.exe",
+            "luall.exe",
+            "lucomserver.exe",
+            "sbserv.exe",
+            "ccEvtMgr.exe",
+            "smcGui.exe",
+            "snac.exe",
+            "SymCorpUI.exe",
+            "sepWscSvc64.exe"
+        ],
+        "url": "http://www.symantec.com/"
     },
     "可牛杀毒": {
         "processes": [
