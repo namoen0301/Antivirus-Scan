@@ -14,6 +14,7 @@
 
 ## 📝 TODO
 
+* [x] 优化对于 `Symantec` 赛门铁克及 `Norton` 诺顿进程的识别
 * [x] 新增对于 `Trend Micro` 趋势科技进程的识别，感谢 @ghoulsec 师傅提供的资料
 * [x] 新增对于 `NuboshEndpoint` 奇安信统一服务器安全进程的识别，感谢 @byyanxia 师傅提供的资料
 * [x] 进行CDN链路的优化，在线识别的网站允许全球访问
