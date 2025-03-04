@@ -206,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php echo $result; ?>
             </div>
         <?php endif; ?>
-        <h4>项目版本号V1.7.3-2025.1</h4>
+        <h4>项目版本号V1.7.4-2025.3</h4>
     </div>
 </body>
 </html>
