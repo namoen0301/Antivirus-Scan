@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>杀软在线识别-渊龙Sec安全团队</title>
     <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --info-color: #fbbc05;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             display: flex;
             flex-direction: column;
@@ -13,82 +31,223 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
+        
         .container {
-            width: 60%;
-            max-width: 800px;
+            width: 80%;
+            max-width: 900px;
             padding: 40px;
             text-align: center;
             background-color: white;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            transition: var(--transition);
         }
+        
+        .container:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #1a73e8;
+        }
+        
         textarea {
             width: 100%;
             height: 200px;
             margin-top: 20px;
             padding: 15px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
             resize: vertical;
+            transition: var(--transition);
+            font-family: 'Consolas', monospace;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+        
         .button-group {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
+        
         button {
-            padding: 10px 25px;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        
+        button:focus {
+            outline: none;
+        }
+        
         .submit-button {
-            background-color: #4CAF50;
+            background-color: var(--primary-color);
             color: white;
         }
+        
         .submit-button:hover {
-            background-color: #45a049;
+            background-color: #1a73e8;
+            transform: translateY(-2px);
         }
+        
         .clear-button {
-            background-color: #f44336;
+            background-color: var(--danger-color);
             color: white;
         }
+        
         .clear-button:hover {
-            background-color: #e53935;
+            background-color: #d62516;
+            transform: translateY(-2px);
         }
+        
         .copy-button {
-            background-color: #008CBA;
-            color: white;
+            background-color: var(--info-color);
+            color: var(--dark-color);
         }
+        
         .copy-button:hover {
-            background-color: #007B9A;
+            background-color: #e8ae00;
+            transform: translateY(-2px);
         }
-        .result {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            max-height: 300px;
-            overflow-y: auto;
+        
+        .command-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
         }
-        .result p {
-            text-align: center; /* 每行内容居中显示 */
-            margin: 5px 0;
-        }
+        
         #commandInput {
-            width: 200px;
-            padding: 10px;
-            margin-top: 10px;
+            width: 250px;
+            padding: 12px 15px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
             text-align: center;
+            background-color: #f5f5f5;
+            font-family: 'Consolas', monospace;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        #commandInput:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .result {
+            margin: 30px 0;
+            font-size: 16px;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            max-height: 350px;
+            overflow-y: auto;
+            border-left: 4px solid var(--secondary-color);
+            text-align: left;
+        }
+        
+        .result p {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result p strong {
+            color: var(--primary-color);
+        }
+        
+        .result a {
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+        
+        .copy-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            button {
+                width: 100%;
+            }
         }
     </style>
     <script>
@@ -101,7 +260,25 @@
             copyText.select();
             copyText.setSelectionRange(0, 99999); // 对移动设备有用
             document.execCommand("copy");
-            alert("已复制: " + copyText.value);
+            
+            // 显示通知
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = '已复制: ' + copyText.value;
+            document.body.appendChild(notification);
+            
+            // 触发重排以应用动画
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            // 2秒后将移除通知
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 2000);
         }
     </script>
 </head>
@@ -187,26 +364,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
         <!-- 表单 -->
         <h1>杀软在线识别-<a href="https://www.aabyss.cn">渊龙Sec安全团队</a></h1>
-    <h3>如有漏报欢迎提交至我们的开源项目</br><a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></h3>
+        <h3>如有漏报欢迎提交至我们的开源项目<br><a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></h3>
+        
         <form action="index.php" method="POST">
             <textarea name="user_input" id="user_input" placeholder="在此输入 tasklist /SVC 命令的执行结果..."><?php echo htmlspecialchars($input); ?></textarea>
+            
+            <div class="command-container">
+                <input type="text" id="commandInput" value="tasklist /SVC" readonly>
+            </div>
+            
             <div class="button-group">
-                <button type="submit" class="submit-button">提交</button>
-                <button type="button" class="clear-button" onclick="clearTextarea()">清空</button>
+                <button type="submit" class="submit-button">提交分析</button>
+                <button type="button" class="clear-button" onclick="clearTextarea()">清空内容</button>
                 <button type="button" class="copy-button" onclick="copyToClipboard()">复制命令</button>
             </div>
         </form>
         
-        <!-- 输入框用于展示要复制的命令 -->
-        <input type="text" id="commandInput" value="tasklist /SVC" readonly>
-        </br>
         <!-- 结果显示区域 -->
         <?php if ($result !== ''): ?>
             <div class="result">
+                <h3 style="text-align: center; margin-bottom: 15px; color: var(--secondary-color);">分析结果</h3>
                 <?php echo $result; ?>
             </div>
         <?php endif; ?>
-        <h4>项目版本号V1.7.4-2025.3</h4>
+        
+        <div class="footer">
+            <p>项目版本号 V1.7.4-2025.3</p>
+        </div>
     </div>
 </body>
 </html>
