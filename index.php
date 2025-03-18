@@ -362,7 +362,7 @@
             copyText.setSelectionRange(0, 99999); // 对移动设备有用
             document.execCommand("copy");
             
-            // 显示通知
+            // 显示通知而不是alert
             const notification = document.createElement('div');
             notification.className = 'copy-notification';
             notification.textContent = '已复制: ' + copyText.value;
@@ -387,7 +387,7 @@
     <div class="container">
         <header>
             <h1>杀软在线识别-<a href="https://www.aabyss.cn">渊龙Sec安全团队</a></h1>
-            <h3>如有漏报欢迎提交至我们的开源项目<br><a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></h3>
+            <h3><b>如有漏报欢迎提交至我们的开源项目<br><a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></b></h3>
         </header>
 
 <?php
@@ -504,7 +504,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
         
         <div class="footer">
-            <p>项目版本号 V1.7.4-2025.3</p>
+            <p><b>项目版本号 V1.8.0-2025.3</b></p>
         </div>
     </div>
 </body>
