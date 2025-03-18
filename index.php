@@ -362,7 +362,7 @@
             copyText.setSelectionRange(0, 99999); // 对移动设备有用
             document.execCommand("copy");
             
-            // 显示通知而不是alert
+            // 显示通知
             const notification = document.createElement('div');
             notification.className = 'copy-notification';
             notification.textContent = '已复制: ' + copyText.value;
