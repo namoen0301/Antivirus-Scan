@@ -697,6 +697,18 @@
         ],
         "url": "https://us.norton.com/"
     },
+        "Norton V25（Avast）": {
+        "processes": [
+            "afwServ.exe",
+            "aswEngSrv.exe",
+            "aswidsagent.exe",
+            "AvDump.exe",
+            "nllToolsSvc.exe",
+            "NortonSvc.exe",
+            "wsc_proxy.exe"
+        ],
+        "url": "https://us.norton.com/"
+    },
     "Symantec（赛门铁克）": {
         "processes": [
             "ccSetMgr.exe",
