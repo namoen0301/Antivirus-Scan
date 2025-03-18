@@ -14,6 +14,7 @@
 
 ## 📝 TODO
 
+* [x] 2025-3-18 感谢 @BushANQ 师傅提交的PR，新增对于 `Norton V25` 的识别补充
 * [x] 2025-3-18 感谢 @BushANQ 师傅对本项目UI的优化
 * [x] 2025-3-4 优化对于 `Symantec` 赛门铁克及 `Norton` 诺顿进程的识别
 * [x] 2025-1-27 新增对于 `Trend Micro` 趋势科技进程的识别，感谢 @ghoulsec 师傅提供的资料
