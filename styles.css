@@ -1,0 +1,761 @@
+:root {
+    --primary-color: #4285f4;
+    --primary-hover: #1a73e8;
+    --primary-light: rgba(66, 133, 244, 0.1);
+    --secondary-color: #34a853;
+    --danger-color: #ea4335;
+    --info-color: #fbbc05;
+    --bg-color: #f5f7fa;
+    --bg-card: #ffffff;
+    --text-color: #333;
+    --text-muted: #666;
+    --border-color: #e0e0e0;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+    --hover-transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    --scale-transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Microsoft YaHei', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 25% 10%, rgba(66, 133, 244, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 75% 75%, rgba(66, 133, 244, 0.05) 0%, transparent 20%);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+h3 {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
+}
+
+.search-section {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: var(--hover-transition);
+}
+
+.search-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.search-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    resize: vertical;
+    transition: var(--transition);
+    font-family: 'Consolas', monospace;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+    transform: scale(1.01);
+    transition: var(--scale-transition);
+}
+
+.command-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+#commandInput {
+    width: 250px;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    background-color: #f5f5f5;
+    font-family: 'Consolas', monospace;
+    color: var(--text-color);
+    transition: var(--transition);
+    cursor: pointer;
+    transition: var(--hover-transition);
+}
+
+#commandInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#commandInput:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+}
+
+.button-group {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+button:focus {
+    outline: none;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.6s ease-out;
+}
+
+button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.clear-button {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.clear-button:hover {
+    background-color: #d62516;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.copy-button {
+    background-color: var(--info-color);
+    color: var(--text-color);
+}
+
+.copy-button:hover {
+    background-color: #e8ae00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.results-section {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: var(--hover-transition);
+}
+
+.results-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.results-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.results-header h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result {
+    text-align: left;
+    color: var(--text-color);
+}
+
+.result p {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--secondary-color);
+    transition: var(--hover-transition);
+}
+
+.result p:hover {
+    transform: translateX(5px);
+    background-color: var(--primary-light);
+}
+
+.result p strong {
+    color: var(--primary-color);
+}
+
+.empty-result {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 1.1em;
+    animation: bounce 1s ease infinite;
+}
+
+.empty-result i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    animation: slideIn 0.3s ease;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .search-section, .results-section {
+        padding: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* 删除重复的容器动画，使用统一的动画定义 */
+.container > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: staggerFadeIn 0.5s ease forwards;
+}
+
+.container > *:nth-child(1) { animation-delay: 0.1s; }
+.container > *:nth-child(2) { animation-delay: 0.2s; }
+.container > *:nth-child(3) { animation-delay: 0.3s; }
+.container > *:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes staggerFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 标题文字渐显效果 */
+h1 {
+    position: relative;
+    overflow: hidden;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: revealText 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+@keyframes revealText {
+    from { transform: translateX(0); }
+    to { transform: translateX(101%); }
+}
+
+/* 整合所有卡片效果 */
+.search-section, .results-section {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.search-section:hover, .results-section:hover {
+    transform: translateY(-5px) rotateX(2deg);
+    box-shadow: var(--box-shadow), 0 8px 24px rgba(66, 133, 244, 0.1);
+}
+
+/* 统一按钮动画效果 */
+.submit-button, .clear-button, .copy-button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.6s ease-out;
+}
+
+button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 统一输入框效果 */
+textarea, #commandInput {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea:focus, #commandInput:focus {
+    transform: scale(1.01);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.3);
+}
+
+/* 命令输入框特效 */
+#commandInput {
+    position: relative;
+}
+
+#commandInput::after {
+    content: '|';
+    position: absolute;
+    right: 15px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 优化结果项样式 */
+.result p {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.result p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.result p:hover {
+    transform: translateX(5px);
+    background-color: var(--primary-light);
+}
+
+.result p:hover::before {
+    transform: scaleY(1);
+}
+
+/* 动态背景效果 */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(66, 133, 244, 0.1) 0%, rgba(66, 133, 244, 0) 70%);
+    animation: floatingBubble 15s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+body::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+body::after {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+@keyframes floatingBubble {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+    100% { transform: translate(-30px, -30px); }
+}
+
+/* 复制通知动画 */
+.copy-notification {
+    animation: notificationEnter 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes notificationEnter {
+    from { transform: translateY(-50px) scale(0.8); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.copy-notification.show {
+    animation: notificationPulse 2s;
+}
+
+@keyframes notificationPulse {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .search-section:hover, .results-section:hover {
+        transform: translateY(-2px);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+/* 增强卡片悬停效果 */
+.search-section, .results-section {
+    transition: all 0.2s ease-out;
+}
+
+.search-section:hover, .results-section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow), 0 8px 24px rgba(66, 133, 244, 0.1);
+}
+
+/* 添加加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 美化滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* 标题的渐进动画效果 */
+@keyframes textReveal {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.animated-text {
+    display: inline-block;
+}
+
+.animated-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: textReveal 0.3s ease forwards;
+}
+
+
+.animated-text span:nth-child(1) { animation-delay: 0.1s; }
+.animated-text span:nth-child(2) { animation-delay: 0.2s; }
+.animated-text span:nth-child(3) { animation-delay: 0.3s; }
+.animated-text span:nth-child(4) { animation-delay: 0.4s; }
+.animated-text span:nth-child(5) { animation-delay: 0.5s; }
+.animated-text span:nth-child(6) { animation-delay: 0.6s; }
+.animated-text span:nth-child(7) { animation-delay: 0.7s; }
+.animated-text span:nth-child(8) { animation-delay: 0.8s; }
+.animated-text span:nth-child(9) { animation-delay: 0.9s; }
+.animated-text span:nth-child(10) { animation-delay: 1.0s; }
+
+
+.result p {
+    transition: all 0.2s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.result p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.result p:hover {
+    transform: translateX(5px);
+    background-color: var(--primary-light);
+}
+
+.result p:hover::before {
+    transform: scaleY(1);
+}
+
+/* 删除重复的打字机效果定义，使用更优化的版本 */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 15px auto;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    width: 0;
+    animation: typing 4s steps(50) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
+/* 打字机效果 */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--primary-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    max-width: fit-content;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
+}
