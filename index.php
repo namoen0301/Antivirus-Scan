@@ -6,351 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>杀软在线识别-渊龙Sec安全团队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #4285f4;
-            --primary-hover: #1a73e8;
-            --primary-light: rgba(66, 133, 244, 0.1);
-            --secondary-color: #34a853;
-            --danger-color: #ea4335;
-            --info-color: #fbbc05;
-            --bg-color: #f5f7fa;
-            --bg-card: #ffffff;
-            --text-color: #333;
-            --text-muted: #666;
-            --border-color: #e0e0e0;
-            --border-radius: 10px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', 'Microsoft YaHei', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 25% 10%, rgba(66, 133, 244, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 75% 75%, rgba(66, 133, 244, 0.05) 0%, transparent 20%);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 30px auto;
-            text-align: center;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-        }
-        
-        h3 {
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-top: 15px;
-            font-size: 1rem;
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            text-decoration: underline;
-            color: var(--primary-hover);
-        }
-        
-        .search-section {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .search-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-        }
-        
-        textarea {
-            width: 100%;
-            height: 200px;
-            padding: 15px;
-            font-size: 16px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            resize: vertical;
-            transition: var(--transition);
-            font-family: 'Consolas', monospace;
-            background-color: #f8f9fa;
-            color: var(--text-color);
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
-        }
-        
-        .command-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            position: relative;
-        }
-        
-        #commandInput {
-            width: 250px;
-            padding: 12px 15px;
-            font-size: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            text-align: center;
-            background-color: #f5f5f5;
-            font-family: 'Consolas', monospace;
-            color: var(--text-color);
-            transition: var(--transition);
-        }
-        
-        #commandInput:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .button-group {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        button {
-            padding: 12px 25px;
-            font-size: 15px;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        button:focus {
-            outline: none;
-        }
-        
-        .submit-button {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .submit-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .clear-button {
-            background-color: var(--danger-color);
-            color: white;
-        }
-        
-        .clear-button:hover {
-            background-color: #d62516;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .copy-button {
-            background-color: var(--info-color);
-            color: var(--text-color);
-        }
-        
-        .copy-button:hover {
-            background-color: #e8ae00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .results-section {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-        
-        .results-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-        }
-        
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .results-header h2 {
-            font-size: 1.6em;
-            font-weight: 600;
-            color: var(--secondary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .result {
-            text-align: left;
-            color: var(--text-color);
-        }
-        
-        .result p {
-            margin: 10px 0;
-            padding: 12px;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            border-left: 3px solid var(--secondary-color);
-        }
-        
-        .result p strong {
-            color: var(--primary-color);
-        }
-        
-        .empty-result {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-            font-size: 1.1em;
-        }
-        
-        .empty-result i {
-            font-size: 3em;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            opacity: 0.5;
-        }
-        
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: var(--text-muted);
-            text-align: center;
-        }
-        
-        .copy-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.3s, transform 0.3s;
-            z-index: 1000;
-        }
-        
-        .copy-notification.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .search-section, .results-section {
-                padding: 20px;
-            }
-            
-            .button-group {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            button {
-                width: 100%;
-            }
-            
-            .results-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function clearTextarea() {
             document.getElementById('user_input').value = '';
@@ -381,13 +37,47 @@
                 }, 300);
             }, 2000);
         }
+        
+        // 添加按钮点击波纹效果
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                const rect = button.getBoundingClientRect();
+                ripple.style.left = `${e.clientX - rect.left}px`;
+                ripple.style.top = `${e.clientY - rect.top}px`;
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // 添加页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+
+            const text = "渊龙Sec安全团队";
+            const animatedText = document.querySelector('.animated-text');
+            
+            text.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                animatedText.appendChild(span);
+            });
+        });
     </script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>杀软在线识别-<a href="https://www.aabyss.cn">渊龙Sec安全团队</a></h1>
-            <h3>如有漏报欢迎提交至我们的开源项目<br><a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></h3>
+            <h1>杀软在线识别-<a href="https://www.aabyss.cn" class="animated-text"></a></h1>
+            <h3><b>如有漏报欢迎提交至我们的开源项目<br>
+            <a href="https://github.com/Aabyss-Team/Antivirus-Scan">https://github.com/Aabyss-Team/Antivirus-Scan</a></b></h3>
         </header>
 
 <?php
@@ -504,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
         
         <div class="footer">
-            <p>项目版本号 V1.7.4-2025.3</p>
+            <p><b>项目版本号 V1.8.0-2025.3</b></p>
         </div>
     </div>
 </body>
