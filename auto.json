@@ -1882,6 +1882,15 @@
         ],
         "url": "https://edr.sangfor.com.cn"
     },
+    "戎码翼龙 NG-EDR": {
+        "processes": [
+            "rm_service.exe",
+            "rm_live.exe",
+            "rm_tray.exe",
+            "rm_hips.exe"
+        ],
+        "url": "https://www.rongma.com"
+    },
     "启明星辰天珣EDRAgent": {
         "processes": [
             "ESAV.exe",
