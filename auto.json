@@ -240,7 +240,28 @@
             "xagtnotif.exe",
             "xagt.exe"
         ],
-        "url": "https://www.fireeye.com/"
+        "url": "https://www.fireeye.com"
+    },
+    "Trellix EDR(McAfee && 火眼)": {
+        "processes": [
+            "macmnsvc.exe",
+            "macompatsvc.exe",
+            "masvc.exe",
+            "mcshield.exe",
+            "mctray.exe",
+            "mfeatp.exe",
+            "mfeensppl.exe",
+            "mfeesp.exe",
+            "mfefw.exe",
+            "mfehcs.exe",
+            "mfemactl.exe",
+            "mfemms.exe",
+            "mfetp.exe",
+            "mfevtps.exe",
+            "mfewch.exe",
+            "updaterui.exe"
+        ],
+        "url": "https://www.trellix.com"
     },
     "Fortinet（飞塔）": {
         "processes": [
@@ -325,7 +346,7 @@
         ],
         "url": "https://www.malwarebytes.com/"
     },
-    "McAfee(迈克菲)": {
+    "McAfee(迈克菲-可能为Trellix)": {
         "processes": [
             "Mcshield.exe",
             "Tbmon.exe",
@@ -1050,7 +1071,6 @@
         "processes": [
             "scan32.exe",
             "mcscript.exe",
-            "updaterui.exe",
             "cleanup.exe",
             "cmdagent.exe",
             "frminst.exe",
