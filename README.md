@@ -8,12 +8,13 @@
 
 本项目就是做一款长期维护的在线杀软识别网站，帮助各位师傅在内网渗透中更进一步~
 
-![Antivirus-Scan-1](./img/Antivirus-Scan-2.png)
+![Antivirus-Scan-3](./img/Antivirus-Scan-3.png)
 
 项目在线地址：[https://av.aabyss.cn/](https://av.aabyss.cn/)，欢迎各位师傅给我们点点Star~😘
 
 ## 📝 TODO
 
+* [x] 2025-4-29 新增对于 `Trellix EDR` 火眼EDR进程（McAfee引擎）的识别，具体可见链接：[Combination of McAfee Enterprise and FireEye Complete](https://www.trellix.com/news/press-releases/combination-of-mcafee-enterprise-and-fireeye-complete/)
 * [x] 2025-4-20 将调用的 `all.min.css` 及 `fa-solid-900.woff2` 放到本地加载，优化网页打开速度
 * [x] 2025-4-20 新增对于 `戎码翼龙 NG-EDR` 戎码EDR进程的识别补充
 * [x] 2025-3-18 感谢 @BushANQ 师傅提交的PR，新增对于 `Norton V25` 的识别补充
