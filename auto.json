@@ -173,6 +173,14 @@
         ],
         "url": "https://www.drweb.com/"
     },
+    "Elastic Security": {
+        "processes": [
+            "elastic-endpoint.exe",
+            "elastic-agent.exe",
+            "agentbeat.exe"
+        ],
+        "url": "https://www.elastic.co/security"
+    },
     "ESET-NOD32": {
         "processes": [
             "egui.exe",
