@@ -194,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
         
         <div class="footer">
-            <p><b>项目版本号 V1.8.3-2025.4</b></p>
+            <p><b>项目版本号 V1.8.4-2025.7</b></p>
         </div>
     </div>
 </body>
