@@ -180,7 +180,7 @@
             "agentbeat.exe",
             "winlogbeat.exe"
         ],
-        "url": "https://www.elastic.co/security"
+        "url": "https://www.elastic.co/endpoint-detection-response"
     },
     "ESET-NOD32": {
         "processes": [
