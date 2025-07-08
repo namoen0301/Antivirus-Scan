@@ -177,7 +177,8 @@
         "processes": [
             "elastic-endpoint.exe",
             "elastic-agent.exe",
-            "agentbeat.exe"
+            "agentbeat.exe",
+            "winlogbeat.exe"
         ],
         "url": "https://www.elastic.co/security"
     },
@@ -1019,12 +1020,6 @@
             "CynetSD64.exe"
         ],
         "url": "https://www.cynet.com/"
-    },
-    "Elastic": {
-        "processes": [
-            "winlogbeat.exe"
-        ],
-        "url": "https://www.elastic.co/"
     },
     "金山网盾": {
         "processes": [
