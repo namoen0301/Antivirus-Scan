@@ -1977,6 +1977,16 @@
         ],
         "url": "https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/virus-and-threat-protection/microsoft-defender-smartscreen/"
     },
+    "Windows Defender Advanced Threat Protection": {
+        "processes": [
+            "MsSense.exe",
+            "SenseCncProxy.exe",
+            "SenseIR.exe",
+            "SenseNdr.exe",
+            "SenseSC.exe"
+        ],
+        "url": "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint"
+    },
     "Sophos Clean Service": {
         "processes": [
             "SophosCleanM64.exe"
@@ -2163,5 +2173,3 @@
         "url":"https://www.iobit.com/en/malware-fighter.php"
     } 
 }
-
-
